@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Age calculator app</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+       *{
+        margin: 0;padding: 0;box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+/* - Purple: hsl(259, 100%, 65%)
+- Light red: hsl(0, 100%, 67%)
+
+### Neutral
+
+- White: hsl(0, 0%, 100%)
+- Off white: hsl(0, 0%, 94%)
+- Light grey: hsl(0, 0%, 86%)
+- Smokey grey: hsl(0, 1%, 44%)
+- Off black: hsl(0, 0%, 8%) */
+
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+     
+      .age-calculator{
+        background:hsl(0, 0%, 86%) ;
+        width:100%;
+        height:100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding:1rem;
+      }
+      .container{
+        background: white;
+        padding:2rem 1rem;
+        border-radius: 1rem;
+        border-bottom-right-radius: 4rem;
+        min-width:15rem;
+
+      }
+      .input-main-container{
+        display: flex;
+        gap:1rem;
+      }
+      .input-container{
+        display: flex;
+        flex-direction: column;
+      }
+.input-container>label{
+  color:hsl(0, 1%, 44%);
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: .7rem;
+
+}
+.input-container>input{
+  padding: .6rem;
+  width:80%;
+  margin:.2rem 0;
+  border-radius: .6rem;
+  border: 1px solid;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: 1px solid hsl(0,1%,44%);
+  outline: none;
+
+
+}
+.input-container>input::placeholder{
+  font-weight: 700;
+  font-size: 1.2rem;
+
+}
+.error{
+  font-size: .7rem;
+  color:hsl(0, 100%, 67%);
+
+}
+
+.line{
+  width:100%;
+  height:1px;
+  background-color: hsl(0, 0%, 86%);
+  margin-top: 2rem;
+
+
+}
+.submit{
+  width:100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.btn{
+  background:hsl(259, 100%, 65%) ;
+  border-radius: 50%;
+  border: none;
+  padding:10px;
+  margin-top: -1.5rem;
+   width:3rem;
+  height: 3rem;
+  cursor: pointer;
+   
+  
+}
+.btn>img{
+  width:1rem;
+  height: 1rem;
+  border-radius: 50%;
+ 
+
+}
+.year-result,.month-result,.day-result{
+  font-size: 4rem;
+  font-weight: 700;
+  color:hsl(259, 100%, 65%) ;
+}
+.endpoint{
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-left: 10px;
+}
+.hide{
+  display: none;
+}
+
+    </style>
+  </head>
+  <body>
+    <section class="age-calculator" role="age-calculator">
+      <main class="container">
+        <div class="input-main-container">
+          <div class="input-container">
+            <label for="day">Day</label>
+            <input type="number" placeholder="DD" max="31" min="1" required id="day" name="day"/>
+            <p class="error hide">This field is required</p>
+          </div>
+          <div class="input-container">
+            <label for="month">Month</label>
+            <input type="number" placeholder="MM" max="12" min="1" required id="month" name="month"/>
+            <p class="error hide">This field is required</p>
+          </div>
+          <div class="input-container">
+            <label for="year">Year</label>
+            <input type="number" placeholder="YYYY" max="2024" min="1950" required id="year" name="year"/>
+            <p class="error hide">This field is required</p>
+          </div>
+        </div>
+<div class="submit">
+  <div class="line"></div>
+  <button class="btn"><img src="assets/images/icon-arrow.svg" alt=""></button>
+</div>
+<div class="results">
+<div class="years content">
+  <span class="year-result">--</span>
+  <span class="endpoint">years</span>
+
+</div>
+<div class="months content">
+ <span class="month-result">--</span>
+  <span class="endpoint">months</span>
+</div>
+<div class="days content">
+ <span class="day-result">--</span>
+  <span class="endpoint">days</span>
+</div>
+
+</div>
+
+      </main>
+    </section>
+
+    <!-- Day
+  DD
+
+  Month
+  MM
+
+  Year
+  YYYY
+
+  
+  -- months
+  -- days -->
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Shivam singh</a>.
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
